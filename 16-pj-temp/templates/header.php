@@ -13,9 +13,9 @@
     </style>
 </head>
 <body class="bg-gray-400">
-    <nav class="bg-white shadow-sm">
+    <nav class="bg-white shadow-sm px-4 py-2">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-4xl brand-text font-bold shadow-xl">LD Pizza</a>
+            <a href="#" class="text-4xl brand-text font-semibold shadow-sm">LD Pizza</a>
         <ul id="nav-mobile" class="text-center hide-on-small-and-down">
             <li><a href="#" class="brand text-xl text-gray-100 font-samibold p-2 rounded-lg shadow-xl">Add a Pizza</a></li>
         </ul>
