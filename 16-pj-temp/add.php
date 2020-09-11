@@ -3,9 +3,9 @@
     $labelClass = 'block text-gray-500';
 
     if(isset($_POST['submit'])) {
-        echo $_POST['email'];
-        echo $_POST['title'];
-        echo $_POST['ingredients'];
+        echo htmlspecialchars($_POST['email']);
+        echo htmlspecialchars($_POST['title']);
+        echo htmlspecialchars($_POST['ingredients']);
     }
     // $_POST: global array is PHP
     // action="add.php" -> send to server handle
