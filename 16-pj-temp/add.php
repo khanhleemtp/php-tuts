@@ -38,6 +38,7 @@
         }
 
         if(array_filter($errors)) {
+            // array_filter($var, $func )
             // echo 'error in the form';
         } else {
             // echo 'form is valid';
@@ -60,13 +61,13 @@
             >
             <label class="<?php echo $labelClass ?>">Your Email</label>
             <input type="text" name="email" class="<?php echo $inputClass ?>" value="<?php echo $email ?>"/>
-            <div class="text-red-300"><?php echo $errors['email'] ?></div>
+            <div class="text-red-500 text-base"><?php echo $errors['email'] ?></div>
             <label class="<?php echo $labelClass ?>">Pizza Title</label>
             <input type="text" name="title" class="<?php echo $inputClass ?>" value="<?php echo $title ?>"/>
-            <div class="text-red-300"><?php echo $errors['title'] ?></div>
+            <div class="text-red-500 text-base"><?php echo $errors['title'] ?></div>
             <label class="<?php echo $labelClass ?>">Ingredients (comma separated):</label>
             <input type="text" name="ingredients" class="<?php echo $inputClass ?>" value="<?php echo $ingredients ?>" />
-            <div class="text-red-300"><?php echo $errors['ingredients'] ?></div>
+            <div class="text-red-500 text-base"><?php echo $errors['ingredients'] ?></div>
             <div class="text-center">
                 <input type="submit" value="Submit" name="submit" class="brand text-xl text-gray-100 font-samibold p-2 px-6 mt-4 rounded-lg shadow-xl" />
             </div>
