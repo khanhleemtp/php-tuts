@@ -1,6 +1,6 @@
 <?php
     
-    $score = 50;
+    // $score = 50;
 
     // superglobals
 
@@ -14,6 +14,31 @@
 
 
     // $_COOKIE
+
+    $file = 'test.txt';
+    
+    if(file_exists($file)) {
+        echo readfile($file) . '</br>';
+
+        // absolute path
+        echo realpath($file) . '</br>';
+
+        // file size
+        echo filesize($file) . '</br>';
+        
+        // copy file
+        copy($file, 'quotes.txt');
+
+        // rename
+        // rename($file, 'test.txt');
+
+    }
+    else {
+        echo 'File does not exist';
+    }
+
+    // create folder
+    mkdir('ld');
 
 ?>
 
