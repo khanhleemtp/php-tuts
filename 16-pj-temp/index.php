@@ -37,7 +37,8 @@
     <div class="container mx-auto max-w-4xl">
         <div class="grid grid-cols-12">
             <?php
-                foreach($pizzas as $pizza){ ?>
+                foreach($pizzas as $pizza): { ?>
+
                     <div class="col-span-6 m-3">
                         <div class="card shadow-md p-4 bg-white">
                             <div class="card-content text-center border-b-2 border-red-200 mb-4 p-4">
@@ -47,9 +48,9 @@
                                 <ul
                                 class="text-xl font-light"
                                 >
-                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient) { ?>
+                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient): { ?>
                                         <li><?php echo htmlspecialchars($ingredient) ?></li>
-                                    <?php } ?>
+                                    <?php } endforeach; ?>
                                 </ul>
                             </div>
                             <div class="card-action">
@@ -57,7 +58,15 @@
                             </div>
                         </div>
                     </div>
-            <?php } ?>
+
+            <?php } endforeach; ?>
+
+            <?php if(count($pizzas) >=3): ?>
+                <p class="col-span-12 text-center text-lg font-semibold text-purple-600">There are more than 3 pizzas</p>
+            <?php else: ?> 
+                <p class="col-span-12 text-center text-lg font-semibold text-purple-600">There are less than 3 pizzas</p>
+            <?php endif; ?> 
+
         </div>
     </div>
 
