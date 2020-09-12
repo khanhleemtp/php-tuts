@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+
+    if($_SERVER['QUERY_STRING'] == 'noname') {
+        // unset($_SESSION['name']);
+        session_unset();
+    }
+
+    $name = $_SESSION['name'] ?? 'Guest';
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +28,9 @@
     <nav class="bg-white shadow-sm px-4 py-2">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.php" class="text-4xl brand-text font-semibold shadow-sm">LD Pizza</a>
-        <ul id="nav-mobile" class="text-center hide-on-small-and-down">
+        <ul id="nav-mobile" class="text-center hide-on-small-and-down flex items-center">
             <li><a href="add.php" class="brand text-xl text-gray-100 font-samibold p-2 rounded-lg shadow-xl">Add a Pizza</a></li>
+            <li class="text-gray-600 text-lg font-sm m-4">Hello <?php echo htmlspecialchars($name); ?></li>
         </ul>
         </div>
     </nav>
