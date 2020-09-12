@@ -79,7 +79,8 @@
     <section class="container mx-auto text-gray-600 text-center text-xl max-w-lg">
         <h4 class="text-center font-semibold text-4xl text-purple-600">Add a Pizza</h4>
         <form
-            action="add.php" method="POST"
+            action="<?php echo $_SERVER['PHP_SELF']; ?>"
+            method="POST"
             class="bg-white flex flex-col align-center justify-center p-4 rounded-lg"
             >
             <label class="<?php echo $labelClass ?>">Your Email</label>

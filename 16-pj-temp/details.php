@@ -49,7 +49,9 @@
             <h4><?php echo $pizza['ingredients'] ?></h4>
 
             <!-- DELTETE FORM -->
-            <form action="details.php" method="POST">
+            <form
+                action="<?php echo $_SERVER['PHP_SELF']; ?>"
+                method="POST">
                 <input type="hidden" name="id_to_delete" value="<?php echo $pizza['id']?>">
                 <input
                 class="brand text-white py-2 px-6 mt-8 rounded-md "
