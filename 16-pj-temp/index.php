@@ -24,6 +24,10 @@
 
     // print_r($pizzas);
 
+    // explode(',', $pizzas[1]['ingredients']);
+    
+    // print_r(explode(',', $pizzas[1]['ingredients']));
+
 ?>
 
 <html lang="en">
@@ -40,9 +44,13 @@
                                 <h6
                                 class="text-3xl font-semibold text-red-400"
                                 ><?php echo htmlspecialchars($pizza['title']); ?></h6>
-                                <div
+                                <ul
                                 class="text-xl font-light"
-                                ><?php echo htmlspecialchars($pizza['ingredients']); ?></div>
+                                >
+                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient) { ?>
+                                        <li><?php echo htmlspecialchars($ingredient) ?></li>
+                                    <?php } ?>
+                                </ul>
                             </div>
                             <div class="card-action">
                                 <a href="#" class="brand-text">More info</a>
