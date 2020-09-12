@@ -13,7 +13,7 @@
         } else {
             $email = $_POST['email'];
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Email not valid' . "<br />";
+            $errors['email'] = 'Email is not valid' . "<br />";
             }
             // echo htmlspecialchars($_POST['email']);
         }
@@ -35,6 +35,14 @@
             if(!preg_match('/^([A-Za-z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
                 $errors['ingredients'] =  'Ingredients must be saparated list';
             }
+        }
+
+        if(array_filter($errors)) {
+            // echo 'error in the form';
+        } else {
+            // echo 'form is valid';
+            header('Location: index.php');
+            // sever run it and send to browser
         }
 
     }
