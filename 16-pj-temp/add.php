@@ -1,9 +1,17 @@
 <?php 
+
+    // style
     $inputClass = 'rounded-full bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500';
     $labelClass = 'block text-gray-500';
 
+
+    // declare variables
     $errors = array('email'=>'', 'title'=>'', 'ingredients'=>'');
     $email = $title = $ingredients = '';
+
+    // connect to db
+    include('config/db_connect.php');
+
 
     if(isset($_POST['submit'])) {
 
@@ -42,7 +50,22 @@
             // echo 'error in the form';
         } else {
             // echo 'form is valid';
-            header('Location: index.php');
+
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
+            $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+            $sql = "INSERT INTO pizzas(title,email,ingredients) 
+            VALUE ('$title', '$email', '$ingredients')";
+
+            // save to db and check
+            if(mysqli_query($conn, $sql)) {
+                // success
+                header('Location: index.php');
+            } else {
+                echo 'query error' . mysqli_error($conn) ;
+            }
+            
+
             // sever run it and send to browser
         }
 

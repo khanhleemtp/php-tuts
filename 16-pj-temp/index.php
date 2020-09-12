@@ -1,9 +1,5 @@
 <?php
-    $conn = mysqli_connect('localhost', 'ldkhanh', '123456', 'ld_pizza');
-    if(!$conn) {
-        echo 'Connect is failed' . mysqli_connect_error();
-    }
-
+    include('config/db_connect.php');
     // write query from all pizzas
 
     $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -53,8 +49,8 @@
                                     <?php } endforeach; ?>
                                 </ul>
                             </div>
-                            <div class="card-action">
-                                <a href="#" class="brand-text">More info</a>
+                            <div class="card-action text-right">
+                                <a href="details.php?id=<?php echo $pizza['id'] ?>" class="brand-text">More info</a>
                             </div>
                         </div>
                     </div>
