@@ -9,6 +9,7 @@
         }
         .brand-text{
             color: #cbb09c !important;
+            text-transform: uppercase;
         }
     </style>
 </head>
