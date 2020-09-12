@@ -37,6 +37,7 @@
 
                     <div class="col-span-6 m-3">
                         <div class="card shadow-md p-4 bg-white">
+                            <img src="img/pizza.svg" class="w-32 h-32 ml-32" />
                             <div class="card-content text-center border-b-2 border-red-200 mb-4 p-4">
                                 <h6
                                 class="text-3xl font-semibold text-red-400"

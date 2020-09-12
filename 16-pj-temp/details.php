@@ -39,7 +39,7 @@
 
 <html lang="en">
 <?php include('templates/header.php') ?>
-    <div class="container mx-auto text-center border-4 border-white p-4 m-8 rounded-md shadow-lg">
+    <div class="container mx-auto bg-gray-200 max-w-lg text-center border-4 border-white p-4 m-8 rounded-md shadow-lg">
          <h2 class="text-purple-600 text-4xl font-semibold">Details</h2>
         <?php if($pizza): ?> 
             <h2 class="text-3xl font-semibold uppercase text-green-600"><?php echo $pizza['title'] ?></h2>
