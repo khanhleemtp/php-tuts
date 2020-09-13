@@ -2,8 +2,14 @@
     
     class User{
 
-        public $email;
-        public $name;
+        // public: access outside class
+        // public $email;
+        // public $name;
+
+        // public: access inside class
+        private $email;
+        private $name;
+
 
         public function __construct($name, $email) {
             $this->name = $name;
@@ -13,7 +19,20 @@
         public function login() {
             echo "$this->name iss logged in";
         }
-        
+
+        public function getName() {
+            return $this->name;
+        }
+
+        public function setName($name){
+            if(is_string($name) && strlen($name) > 1) {
+                $this->name = $name;
+                return "name has been updated to $name";
+            } else {
+                return 'not a valid name';
+            }
+        }
+
     }
 
     // $userOne = new User();
@@ -21,7 +40,13 @@
 
     $useTwo = new User('ld', 'ld@gmail.com');
     // echo $useTwo->name;
-    $useTwo->login();
+    // $useTwo->login();
+    // echo $useTwo->getName();
+    // echo $useTwo->setName('ldk');
+    // echo $useTwo->setName(50);
+    // echo $useTwo->getName();
+
+
 ?>
 
 <html lang="en">
